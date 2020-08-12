@@ -14,7 +14,7 @@ class UpdateTelephoneLength extends Migration
     public function up()
     {
         Schema::table('owners', function (Blueprint $table) {
-            $table->string('telephone', 14)->change();
+            $table->string('telephone', 14)->change()->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateTelephoneLength extends Migration
     public function down()
     {
         Schema::table('owners', function (Blueprint $table) {
-            $table->integer('telephone');
+            $table->integer('telephone')->change();
         });
     }
 }

@@ -14,7 +14,7 @@ class UpdateTelephoneColumn extends Migration
     public function up()
     {
         Schema::table('owners', function (Blueprint $table) {
-            $table->integer('telephone');
+            $table->integer('telephone')->nullable();
         });
     }
 
