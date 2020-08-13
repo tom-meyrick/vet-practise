@@ -27,7 +27,7 @@ class RouterTest extends TestCase
    {
       $response = $this->get('/owners'); 
       $response->assertStatus(200);
-      $response->assertViewIs('owners');
+      $response->assertViewIs('owners.owners');
    }
 
    public function testOwnerDisplay()
@@ -42,10 +42,4 @@ class RouterTest extends TestCase
       $response = $this->get('/owners/99999'); 
       $response->assertStatus(404);
    }
-
-//    public function testWelcome()
-//    {
-//        $response = $this->get('/');
-//        $response->assertViewIs('welcome');
-//    }
 }

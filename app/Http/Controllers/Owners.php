@@ -9,11 +9,11 @@ class Owners extends Controller
 {
     public function index()
     {
-       return view("owners", ["owners" => Owner::all()]);
+       return view("owners/owners", ["owners" => Owner::all()]);
     }
 
     public function show(Owner $owner)
     {
-        return view("display", ["owner" => $owner]);
+        return view("owners/display", ["owner" => $owner]);
     }
 }

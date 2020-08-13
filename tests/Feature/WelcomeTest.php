@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Owner;
 
 class WelcomeTest extends TestCase
 {
@@ -13,7 +14,7 @@ class WelcomeTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testWelcomeRoute()
     {
         $response = $this->get('/owner');
         $response->assertStatus(200);

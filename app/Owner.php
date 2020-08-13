@@ -26,22 +26,5 @@ class Owner extends Model
     {
         return "{$this->address_1} {$this->address_2} {$this->town} {$this->postcode}"; 
     }
- 
-    public static function hasEmail()    // Check email 
-    {
-        $email = $this->email;
-        $owners = Owner::all();
-        foreach ($owners as $owner) {
-           return $email === $owner->email; 
-        }
-    }
-
-    public function formattedPhoneNumber($telephone)  
-    {   
-        $pattern = "^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"; 
-        $replace = "^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s\d{6}";
-        $telephone = $this->telephone;
-        return preg_replace($pattern, $replace, $telephone);
-    }
     
 }

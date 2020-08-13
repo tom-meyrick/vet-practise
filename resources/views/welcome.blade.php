@@ -6,5 +6,4 @@
 
 @section("content")
 @include("partials/title")
-<p>{{ $message }}</p>
 @endsection

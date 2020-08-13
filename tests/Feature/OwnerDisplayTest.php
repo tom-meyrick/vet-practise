@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Owner;
 
 class OwnerDisplayTest extends TestCase
 {
@@ -13,7 +14,7 @@ class OwnerDisplayTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testOwnerDisplayRoute()
     {
         $response = $this->get('/owner/1');
         $response->assertStatus(200);

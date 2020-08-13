@@ -14,7 +14,7 @@ class UpdateTelephoneLength extends Migration
     public function up()
     {
         Schema::table('owners', function (Blueprint $table) {
-            $table->string('telephone', 14)->change()->nullable();
+            $table->string('telephone', 20)->change()->nullable();
         });
     }
 
