@@ -17,17 +17,17 @@ class Owner extends Model
         "postcode"
     ];
 
-    public function fullName()
+    public function fullName() : string
     {
         return "{$this->first_name} {$this->last_name}"; 
     }
 
-    public function fullAddress()
+    public function fullAddress() : string
     {
         return "{$this->address_1} {$this->address_2} {$this->town} {$this->postcode}"; 
     }
-
-    public static function hasEmail()
+ 
+    public static function hasEmail()    // Check email 
     {
         $email = $this->email;
         $owners = Owner::all();
@@ -36,12 +36,12 @@ class Owner extends Model
         }
     }
 
-    public function formattedPhoneNumber()
+    public function formattedPhoneNumber($telephone)  
     {   
-        $pattern = "^[+]*|\d"; 
-        $replace = " ^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$";
-        $phone = $this->telephone;
-        return preg_replace($pattern, $replace, $phone);
+        $pattern = "^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"; 
+        $replace = "^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s\d{6}";
+        $telephone = $this->telephone;
+        return preg_replace($pattern, $replace, $telephone);
     }
     
 }

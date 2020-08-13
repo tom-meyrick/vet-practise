@@ -55,11 +55,15 @@ class OwnerTest extends TestCase
             "address_2" => "New Jueen Sjreet", 
             "town" => "Chiswick", 
             "postcode" => "CH12 3RE",
-            "telephone" => "0112989765"
+            "telephone" => "01129897659229480900948"
         ]);
         
+        //get owner
+        //get phone
+        //check that phone no is 14 digits long
         $ownersFromDB = Owner::all()->first(); 
-        $this->assertSame("jom-jeyrick@ret.com", $ownersFromDB->email); 
-        $this->assertSame("bom-beyrick@bet.com", $ownersFromDB->email); 
+        $phone = $ownersFromDB->telephone;
+        $this->assertFalse(strlen($phone) === 14); 
     }
+    
 }

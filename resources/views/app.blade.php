@@ -13,7 +13,6 @@
     </header>
 
     <main>
-        @include("partials/title")
         @yield("content")
     </main>
 

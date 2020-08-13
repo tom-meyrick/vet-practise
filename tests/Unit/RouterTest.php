@@ -23,6 +23,26 @@ class RouterTest extends TestCase
       $response->assertStatus(404);
    }
 
+   public function testOwners()
+   {
+      $response = $this->get('/owners'); 
+      $response->assertStatus(200);
+      $response->assertViewIs('owners');
+   }
+
+   public function testOwnerDisplay()
+   {
+      $response = $this->get('/owners/1'); 
+      $response->assertStatus(200);
+      $response->assertViewIs('display');
+   }
+
+   public function testOwners404()
+   {
+      $response = $this->get('/owners/99999'); 
+      $response->assertStatus(404);
+   }
+
 //    public function testWelcome()
 //    {
 //        $response = $this->get('/');
