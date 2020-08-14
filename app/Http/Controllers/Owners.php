@@ -16,4 +16,18 @@ class Owners extends Controller
     {
         return view("owners/display", ["owner" => $owner]);
     }
+
+    public function create()
+    {
+        return view("owners/create");
+    }
+
+    public function createPost(Request $request)
+    {
+        $data = $request->all();
+        
+        $owner = Owner::create($data); 
+
+        return redirect("/owners/{$owner->id}");
+    }
 }
