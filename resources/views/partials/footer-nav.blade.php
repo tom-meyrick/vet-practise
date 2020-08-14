@@ -16,27 +16,6 @@
         <!-- Grid column -->
         <div class="col-md-6 col-lg-7 text-center text-md-right">
 
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f white-text mr-4"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter white-text mr-4"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram white-text"> </i>
-          </a>
-
         </div>
         <!-- Grid column -->
 
@@ -88,7 +67,10 @@
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <i class="fas fa-home mr-3"></i>Bristol, BS7 0AL</p>
+          <i class="fas fa-home mr-3"></i>99 Wood Road, Bristol</p>
+        <p>
+         <p>
+          <i class="fas fa-home mr-3"></i>BS7 0AL</p>
         <p>
           <i class="fas fa-envelope mr-3"></i>vetsahoy@gmail.com</p>
         <p>

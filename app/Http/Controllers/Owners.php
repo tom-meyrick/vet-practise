@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\OwnerRequest;
 
 use Illuminate\Http\Request;
 use App\Owner;
@@ -22,7 +23,7 @@ class Owners extends Controller
         return view("owners/create");
     }
 
-    public function createPost(Request $request)
+    public function createPost(OwnerRequest $request)
     {
         $data = $request->all();
         
@@ -30,4 +31,17 @@ class Owners extends Controller
 
         return redirect("/owners/{$owner->id}");
     }
+
+    public function edit(Owner $owner)
+    {
+        return view("owners/edit", ["owner" => $owner]);
+    }
+
+    public function editPost(Owner $owner, OwnerRequest $request)
+    {           
+        $owner->fill($request->input())->save(); 
+
+        return redirect("/owners/{$owner->id}");
+    }
+
 }

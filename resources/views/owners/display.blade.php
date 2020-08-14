@@ -10,10 +10,12 @@ Our owners
 {{ $owner->fullName() }}
 </h2> 
 <article class="card-body">
-<h5>Phone: </h5>{{ $owner->telephone }} 
-<h5>Address: </h5>{{ $owner->fullAddress() }} 
-
+<p>Phone: {{ $owner->telephone }}</p>
+<p>Email: {{ $owner->email }}</p>
+<p>Address: {{ $owner->fullAddress() }}</p>
 </article>
+  <a href="/owners/edit/{{ $owner->id }}" class="btn btn-link">Edit details</a>
 </div> 
+
 @endsection
 

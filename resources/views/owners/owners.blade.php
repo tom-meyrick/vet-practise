@@ -11,7 +11,7 @@ Customer page
 
 @foreach ($owners as $owner)
 <ul class="list-group">
-  <li class="list-group-item">{{ $owner->fullName() }}</li>
+  <a href="/owners/{{ $owner->id }}"><li class="list-group-item">{{ $owner->fullName() }}</li></a>
 </ul>
 @endforeach
 
