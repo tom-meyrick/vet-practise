@@ -24,7 +24,7 @@ class Owner extends Model
 
     public function fullAddress() : string
     {
-        return "{$this->address_1} {$this->address_2} {$this->town} {$this->postcode}"; 
+        return "{$this->address_1}, {$this->address_2}, {$this->town}, {$this->postcode}"; 
     }
     
 }
