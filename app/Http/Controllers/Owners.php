@@ -8,6 +8,7 @@ use App\Owner;
 
 class Owners extends Controller
 {
+    //returns all owners in db
     public function index()
     {
        return view("owners/owners", ["owners" => Owner::all()]);
@@ -18,11 +19,13 @@ class Owners extends Controller
         return view("owners/display", ["owner" => $owner]);
     }
 
+    // Returns the entry form view
     public function create()
     {
         return view("owners/create");
     }
 
+    // Passes new form data into the database
     public function createPost(OwnerRequest $request)
     {
         $data = $request->all();
@@ -32,16 +35,17 @@ class Owners extends Controller
         return redirect("/owners/{$owner->id}");
     }
 
+    // Returns the view for form to edit the database
     public function edit(Owner $owner)
     {
         return view("owners/edit", ["owner" => $owner]);
     }
 
+    // Makes an edit to an existing owner in the db
     public function editPost(Owner $owner, OwnerRequest $request)
     {           
         $owner->fill($request->input())->save(); 
 
         return redirect("/owners/{$owner->id}");
     }
-
 }
