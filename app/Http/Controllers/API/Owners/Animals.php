@@ -17,9 +17,10 @@ class Animals extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Owner $owner)
-    {
-        $animal = $owner->animals->all();
-        return new AnimalResource($animal);
+    {   
+        return $owner->animals->transform(function($animal){
+            return new AnimalResource($animal);
+        });
     }
 
     /**
