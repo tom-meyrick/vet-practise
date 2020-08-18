@@ -13,7 +13,7 @@
         <a class="nav-link" href="/owners">Owners</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Pets</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-2 ml-auto" method="GET" action="/search">

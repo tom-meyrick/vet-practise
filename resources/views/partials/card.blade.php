@@ -7,8 +7,10 @@
 <p>Email: {{ $owner->email }}</p>
 <p>Address: {{ $owner->fullAddress() }}</p>
 <a href="/owners/edit/{{ $owner->id }}" class="btn btn-link">Edit owner details</a>
+</article>
 @if($owner->animals->isNotEmpty())
-<h2>Pets</h2>
+<h2 class="card-header">Pets</h2>
+<article class="card-body">
 @foreach($owner->animals as $animal)
 <p>Name: {{ $animal->name }}</p>
 <p>Type: {{ $animal->type }}</p>
