@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\OwnerRequest;
-
+use App\Http\Requests\PetRequest;
 use Illuminate\Http\Request;
 use App\Owner;
+use App\Animal;
 
 class Owners extends Controller
 {
@@ -47,5 +48,17 @@ class Owners extends Controller
         $owner->fill($request->input())->save(); 
 
         return redirect("/owners/{$owner->id}");
+    }
+    // Returns the pet form view
+    public function addPet()
+    {
+        return view("pets/create");
+    }
+    // Ties a pet entry to an owner and adds to db
+    public function createPetEntry(PetRequest $request, Owner $owner) 
+    {
+      $animal = new Animal($request->all());
+      $owner->animals()->save($animal);
+      return redirect("/owners/{$owner->id}"); 
     }
 }

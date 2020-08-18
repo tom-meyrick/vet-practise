@@ -17,6 +17,11 @@ class Owner extends Model
         "postcode"
     ];
 
+    public function animals()
+    {
+        return $this->hasMany(Animal::class); 
+    }
+
     public function fullName() : string
     {
         return "{$this->first_name} {$this->last_name}"; 
