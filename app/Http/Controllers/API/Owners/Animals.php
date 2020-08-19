@@ -18,9 +18,7 @@ class Animals extends Controller
      */
     public function index(Owner $owner)
     {   
-        return $owner->animals->transform(function($animal){
-            return new AnimalResource($animal);
-        });
+        return AnimalResource::collection($owner->animals);
     }
 
     /**

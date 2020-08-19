@@ -18,9 +18,9 @@ class AnimalResource extends JsonResource
             "id" => $this->id,
             "name" => $this->name, 
             "dob" => $this->dob, 
-            "weight" => $this->weight,
-            "height" => $this->height,
-            "biteyness" => $this->biteyness,
+            "weight" => $this->weightInKg(),
+            "height" => $this->heightInCm(),
+            "biteyness" => $this->biteynessCalc(),
             "owner" => $this->owner->fullName()
         ];
     }

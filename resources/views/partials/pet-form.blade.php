@@ -52,7 +52,7 @@
   <div class="form-row">
   <div class="form-group col-md-12">
     <label for="address_1">Height</label>
-    <input type="number" class="form-control @error('height') is-invalid @enderror" id="height" placeholder="Height (in metres)" name="height" value="{{ old('height') ?? ($animal->height ?? '')}}" required>
+    <input type="number" class="form-control @error('height') is-invalid @enderror" id="height" placeholder="Height (in cm)" name="height" value="{{ old('height') ?? ($animal->height ?? '')}}" required>
 
     @error('height')
       <p class="invalid-feedback">

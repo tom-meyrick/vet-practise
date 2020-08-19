@@ -16,6 +16,21 @@ class Animal extends Model
         "biteyness"
     ];
 
+    public function weightInKg()
+    {
+        return "{$this->weight}kg";
+    }
+
+    public function heightInCm()
+    {
+        return "{$this->height}cm";
+    }
+
+    public function biteynessCalc()
+    {
+        return "{$this->biteyness}/5";
+    }
+
     public function owner()
     {
         return $this->belongsTo(Owner::class); 
