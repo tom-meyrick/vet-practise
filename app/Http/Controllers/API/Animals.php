@@ -8,6 +8,7 @@ use App\Http\Resources\API\AnimalResource;
 use App\Http\Resources\API\AnimalListResource;
 use Illuminate\Http\Request;
 use App\Animal; 
+use App\Treatment;
 
 class Animals extends Controller
 {
@@ -32,6 +33,20 @@ class Animals extends Controller
         return new AnimalResource($animal);
     }
 
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $owner
+     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Request
+     */
+    public function store(AnimalRequest $request, Animal $animal)
+    {
+        $data = $request->only(["owner_id", "name", "type", "dob", "weight", "height", "biteyness"]); // use the new method
+        $animal = Animal::create($data)->setTreatments($request->get("treatments"));
+        return new AnimalResource($animal);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -41,8 +56,9 @@ class Animals extends Controller
      */
     public function update(AnimalRequest $request, Animal $animal)
     {
-        $data = $request->all(); 
+        $data = $request->only(["name", "type", "dob", "weight", "height", "biteyness"]); 
         $animal->fill($data)->save(); 
+        $animal->setTreatments($request->get("treatments")); 
         return new AnimalResource($animal);
     }
 

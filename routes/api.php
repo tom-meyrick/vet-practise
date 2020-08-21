@@ -23,7 +23,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Owner API routes
 
-// Route::get("", [Owners::class, "index"]); 
 
 Route::group(["prefix" => "owners"], function () { 
     //Get the index
@@ -49,7 +48,7 @@ Route::group(["prefix" => "owners"], function () {
 
 Route::group(["prefix" => "animals"], function () { 
     Route::get("", [Animals::class, "index"]); 
-    //Secondary prefix refers to animal id
+    Route::post("", [Animals::class, "store"]);
     Route::group(["prefix" => "{animal}"], function () {
         //Show the animal
         Route::get("", [Animals::class, "show"]); 

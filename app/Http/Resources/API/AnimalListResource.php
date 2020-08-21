@@ -17,7 +17,8 @@ class AnimalListResource extends JsonResource
         return [
             "id" => $this->id, 
             "name" => $this->name,
-            "owner" => $this->owner->fullName()
+            "owner" => $this->owner->fullName(),
+            "treatments" => $this->treatments->pluck("name")
         ]; 
     }
 }

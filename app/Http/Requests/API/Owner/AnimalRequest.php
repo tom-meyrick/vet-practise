@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\API;
+namespace App\Http\Requests\API\Owner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,15 +24,12 @@ class AnimalRequest extends FormRequest
     public function rules()
     {
         return [
-            "owner_id" =>["required", "integer"],
             "name" =>["required", "string", "max:50"],
             "type" =>["required", "string", "max:50"], 
             "dob" =>["required", "string", "max:50"],
             "weight" => ["required", "integer"], 
             "height" => ["required", "integer"], 
             "biteyness" => ["required", "integer", "between:1,5"],
-            "treatments" => ["required", "array"], 
-            "treatments.*" => ["string", "max:30"]
         ];
     }
 }

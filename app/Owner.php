@@ -31,5 +31,10 @@ class Owner extends Model
     {
         return "{$this->address_1}, {$this->address_2}, {$this->town}, {$this->postcode}"; 
     }
+
+    public function numberOfPets() : int
+    {
+        return count($this->animals); 
+    }
     
 }

@@ -38,4 +38,9 @@ class OwnerTest extends TestCase
         $this->assertSame("jom-jeyrick@ret.com", $this->owner->email); 
         $this->assertDifferent("bom-beyrick@bet.com", $this->owner->email); 
     }    
+
+    public function testNumberPets()
+    {
+        $this->assertSame(); 
+    }
 }

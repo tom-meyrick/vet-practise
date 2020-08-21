@@ -7,14 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 class Animal extends Model
 {
     protected $fillable = [
+        "owner_id",
         "name",
         "type",
         "dob",
         "email",
         "weight",
         "height",
-        "biteyness"
+        "biteyness",
     ];
+
+    public function treatments()
+    {
+        return $this->belongsToMany(Treatment::class); 
+    }
+
+    public function setTreatments(array $strings) : Animal
+    {
+        $treatments = Treatment::fromStrings($strings); 
+        $this->treatments()->sync($treatments->pluck("id")); 
+        return $this;
+    }
 
     public function weightInKg()
     {
