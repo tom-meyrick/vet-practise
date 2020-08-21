@@ -29,7 +29,7 @@ class Animal extends Model
         return $this;
     }
 
-    public function getTreatments()
+    public function getTreatments()  : string
     {
        $treatments = $this->treatments->pluck("name");
        return $treatments->implode(", ");

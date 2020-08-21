@@ -24,7 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Owner API routes
 
 
-Route::group(["prefix" => "owners"], function () { 
+Route::group(["prefix" => "owners", "middleware" =>['auth:api']
+], function () { 
     //Get the index
     Route::get("", [Owners::class, "index"]); 
     //Store a newly created Owner 

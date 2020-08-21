@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\OwnerRequest;
+use App\Http\Requests\API\OwnerStoreRequest;
 use App\Http\Resources\API\OwnerResource;
 use App\Http\Resources\API\OwnerListResource;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class Owners extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OwnerRequest $request)
+    public function store(OwnerStoreRequest $request)
     {
         $data = $request->all(); 
         $owner = Owner::create($data); 
