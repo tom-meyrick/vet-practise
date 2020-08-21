@@ -29,6 +29,12 @@ class Animal extends Model
         return $this;
     }
 
+    public function getTreatments()
+    {
+       $treatments = $this->treatments->pluck("name");
+       return $treatments->implode(", ");
+    }
+
     public function weightInKg()
     {
         return "{$this->weight}kg";

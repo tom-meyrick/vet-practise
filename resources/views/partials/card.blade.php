@@ -15,6 +15,7 @@
 <p>Name: {{ $animal->name }}</p>
 <p>Type: {{ $animal->type }}</p>
 <p>Dangerous: {{ $animal->dangerous() ? "Yes, very" : "Not really" }}</p>
+<p>Treatments: {{ $animal->getTreatments() }}</p>
 <hr>
 @endforeach
 @endif
